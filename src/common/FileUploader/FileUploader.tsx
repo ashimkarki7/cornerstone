@@ -1,26 +1,32 @@
-import  {useRef} from 'react';
+import React, {useRef} from 'react';
 import type {ChangeEvent,DragEvent} from 'react';
 import FileInputStyles from './FileUploader.module.scss';
 import {FileUploadSvg} from '@assets/svg';
+import type { UploaderProps } from '../types.ts';
 
 
-const FileUploader = () => {
+const FileUploader: React.FC<UploaderProps> = (props) => {
+  const { handleZipUpload, error,setError }= props;
   const fileInputRef = useRef<HTMLInputElement>(null);
   const dragOverRef = useRef(false);
 
   const handleFileSelect = (file: File) => {
+    setError(null);
     if (file?.name?.endsWith(".zip")) {
-      console.log('drag',file);
+      handleZipUpload(file);
     } else {
+      setError("Please select a ZIP file containing DICOM files.")
       alert("Please select a ZIP file containing DICOM files.")
     }
   }
 
   const handleInputChange =(e:ChangeEvent<HTMLInputElement>)=>{
+    setError(null);
     const file = e.target.files?.[0];
     if (file?.name?.endsWith(".zip")) {
-      console.log('file',file?.name);
+      handleZipUpload(file);
     }else {
+      setError("Please select a ZIP file containing DICOM files.")
       alert("Please select a ZIP file containing DICOM files.")
     }
   }
@@ -64,6 +70,9 @@ const FileUploader = () => {
       <p style={{ fontSize: "0.75rem",  fontWeight: 500 }}>
        <strong>Note : Use Zip With . dcm Extension</strong>
       </p>
+
+
+      {error && <div className={FileInputStyles.Error_message}>{error}</div>}
 
     </div>
   );

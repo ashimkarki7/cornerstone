@@ -14,13 +14,33 @@
   cursor: pointer;
   transition: all var(--transition-base);
   color: var(--color-secondary-header-text);
+
+  .Error_message {
+    padding: $spacing-md $spacing-lg;
+    background-color: rgba(248, 113, 113, 0.1);
+    border: 1px solid $danger;
+    border-radius: $border-radius-md;
+    color:$danger;
+    font-size: 0.875rem;
+  }
 }
 
 .DragAndDrop:hover {
   color: var(--color-text);
   border-color:var(--color-header-bg-primary);
   background-color: var(--color-header-bg-primary);
+
+  .Error_message {
+    padding: $spacing-md $spacing-lg;
+    background-color: rgba(248, 113, 113, 0.1);
+    border: 1px solid $danger;
+    border-radius: $border-radius-md;
+    color:blue;
+    font-size: 0.875rem;
+  }
 }
 input[type="file"] {
   display: none;
 }
+
+

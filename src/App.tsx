@@ -1,9 +1,10 @@
+import PageLayout from '@common/Layout';
 
 function App() {
   return (
-    <div>
-        hy
-    </div>
+    <PageLayout>
+        boddy
+    </PageLayout>
   );
 }
 

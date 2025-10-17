@@ -2,6 +2,7 @@ import React, { Fragment,  } from 'react';
 
 
 import type { HomepageProps } from '../types/homePage';
+import FileUploader from '@common/FileUploader';
 
 const HomepageComponent: React.FC<HomepageProps> = (props: any) => {
   const { getFile  } = props;
@@ -18,7 +19,7 @@ const HomepageComponent: React.FC<HomepageProps> = (props: any) => {
         }}
         className={''}
       >
-          <div id={'uploader'} >uplaod</div>
+          <FileUploader/>
       </div>
     </Fragment>
   );

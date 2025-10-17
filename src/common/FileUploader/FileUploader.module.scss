@@ -1,0 +1,26 @@
+@use '../../styles/variables/index' as *;
+
+
+
+.DragAndDrop {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  @include centerFlexColumnBetween;
+  min-height: 300px;
+  padding: 32px;
+  border: 2px dashed var(--color-header-bg-primary);
+  border-radius: #{$border-radius-lg};
+  background-color:var( --color-card-shadow);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--color-secondary-header-text);
+}
+
+.DragAndDrop:hover {
+  color: var(--color-text);
+  border-color:var(--color-header-bg-primary);
+  background-color: var(--color-header-bg-primary);
+}
+input[type="file"] {
+  display: none;
+}

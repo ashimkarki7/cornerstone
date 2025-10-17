@@ -1,0 +1,29 @@
+.dropdown {
+  position: absolute;
+}
+
+/* Dropdown Menu */
+.dropdownMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-top: 2px;
+  list-style: none;
+  padding: 0;
+  margin: 14px;
+
+  li {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  li:hover {
+    background-color: #ddd;
+  }
+}

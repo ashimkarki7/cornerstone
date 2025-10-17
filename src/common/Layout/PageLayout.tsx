@@ -1,11 +1,9 @@
-
+import { Header } from '@common/Header/Header.tsx';
 
 const PageLayout = (props: any) => {
   return (
     <div id="PageLayout">
-        //header
-      <div id="PageHeader"/>
-        hy
+      <Header />
       <div>
         <div id={'viewContent'}>{props.children}</div>
       </div>
